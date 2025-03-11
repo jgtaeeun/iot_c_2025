@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Source\\iot_c_2025\\day01\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{448643ED-A4A3-4E53-B3A2-B0A8DA27FBEE}|day01.vcxproj|C:\\Source\\iot_c_2025\\day01\\scanf.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{448643ED-A4A3-4E53-B3A2-B0A8DA27FBEE}|day01.vcxproj|solutionrelative:scanf.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{448643ED-A4A3-4E53-B3A2-B0A8DA27FBEE}|day01.vcxproj|C:\\Source\\iot_c_2025\\day01\\value9.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{448643ED-A4A3-4E53-B3A2-B0A8DA27FBEE}|day01.vcxproj|solutionrelative:value9.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{448643ED-A4A3-4E53-B3A2-B0A8DA27FBEE}|day01.vcxproj|C:\\Source\\iot_c_2025\\day01\\printf4.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{448643ED-A4A3-4E53-B3A2-B0A8DA27FBEE}|day01.vcxproj|solutionrelative:printf4.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{448643ED-A4A3-4E53-B3A2-B0A8DA27FBEE}|day01.vcxproj|C:\\Source\\iot_c_2025\\day01\\value7.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{448643ED-A4A3-4E53-B3A2-B0A8DA27FBEE}|day01.vcxproj|solutionrelative:value7.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{448643ED-A4A3-4E53-B3A2-B0A8DA27FBEE}|day01.vcxproj|C:\\Source\\iot_c_2025\\day01\\value.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{448643ED-A4A3-4E53-B3A2-B0A8DA27FBEE}|day01.vcxproj|solutionrelative:value.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{448643ED-A4A3-4E53-B3A2-B0A8DA27FBEE}|day01.vcxproj|C:\\Source\\iot_c_2025\\day01\\value8.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{448643ED-A4A3-4E53-B3A2-B0A8DA27FBEE}|day01.vcxproj|solutionrelative:value8.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,45 +22,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "printf4.c",
-              "DocumentMoniker": "C:\\Source\\iot_c_2025\\day01\\printf4.c",
-              "RelativeDocumentMoniker": "printf4.c",
-              "ToolTip": "C:\\Source\\iot_c_2025\\day01\\printf4.c",
-              "RelativeToolTip": "printf4.c",
+              "Title": "value7.c",
+              "DocumentMoniker": "C:\\Source\\iot_c_2025\\day01\\value7.c",
+              "RelativeDocumentMoniker": "value7.c",
+              "ToolTip": "C:\\Source\\iot_c_2025\\day01\\value7.c",
+              "RelativeToolTip": "value7.c",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-03-11T03:47:59.437Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "scanf.c",
-              "DocumentMoniker": "C:\\Source\\iot_c_2025\\day01\\scanf.c",
-              "RelativeDocumentMoniker": "scanf.c",
-              "ToolTip": "C:\\Source\\iot_c_2025\\day01\\scanf.c*",
-              "RelativeToolTip": "scanf.c*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-03-11T03:46:43.775Z",
+              "WhenOpened": "2025-03-11T08:12:17.686Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "value.c",
-              "DocumentMoniker": "C:\\Source\\iot_c_2025\\day01\\value.c",
-              "RelativeDocumentMoniker": "value.c",
-              "ToolTip": "C:\\Source\\iot_c_2025\\day01\\value.c",
-              "RelativeToolTip": "value.c",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAACAAAAAAAAAA==",
+              "Title": "value8.c",
+              "DocumentMoniker": "C:\\Source\\iot_c_2025\\day01\\value8.c",
+              "RelativeDocumentMoniker": "value8.c",
+              "ToolTip": "C:\\Source\\iot_c_2025\\day01\\value8.c",
+              "RelativeToolTip": "value8.c",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-03-11T03:29:14.439Z",
+              "WhenOpened": "2025-03-11T08:12:15.079Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "value9.c",
+              "DocumentMoniker": "C:\\Source\\iot_c_2025\\day01\\value9.c",
+              "RelativeDocumentMoniker": "value9.c",
+              "ToolTip": "C:\\Source\\iot_c_2025\\day01\\value9.c*",
+              "RelativeToolTip": "value9.c*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2025-03-11T08:07:24.924Z",
               "EditorCaption": ""
             }
           ]
