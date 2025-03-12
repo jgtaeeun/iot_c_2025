@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Source\\iot_c_2025\\day2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EF46615D-0ECD-4DD2-8407-D2C697B86019}|day2.vcxproj|C:\\Source\\iot_c_2025\\day2\\for1.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EF46615D-0ECD-4DD2-8407-D2C697B86019}|day2.vcxproj|solutionrelative:for1.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{EF46615D-0ECD-4DD2-8407-D2C697B86019}|day2.vcxproj|C:\\Source\\iot_c_2025\\day2\\calcu_program.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EF46615D-0ECD-4DD2-8407-D2C697B86019}|day2.vcxproj|solutionrelative:calcu_program.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF46615D-0ECD-4DD2-8407-D2C697B86019}|day2.vcxproj|C:\\Source\\iot_c_2025\\day2\\pointer.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EF46615D-0ECD-4DD2-8407-D2C697B86019}|day2.vcxproj|solutionrelative:pointer.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +23,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "for1.c",
-              "DocumentMoniker": "C:\\Source\\iot_c_2025\\day2\\for1.c",
-              "RelativeDocumentMoniker": "for1.c",
-              "ToolTip": "C:\\Source\\iot_c_2025\\day2\\for1.c*",
-              "RelativeToolTip": "for1.c*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAEAAAAAAAAAA==",
+              "Title": "calcu_program.c",
+              "DocumentMoniker": "C:\\Source\\iot_c_2025\\day2\\calcu_program.c",
+              "RelativeDocumentMoniker": "calcu_program.c",
+              "ToolTip": "C:\\Source\\iot_c_2025\\day2\\calcu_program.c",
+              "RelativeToolTip": "calcu_program.c",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-03-12T06:10:13.076Z",
+              "WhenOpened": "2025-03-12T07:43:21.99Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "pointer.c",
+              "DocumentMoniker": "C:\\Source\\iot_c_2025\\day2\\pointer.c",
+              "RelativeDocumentMoniker": "pointer.c",
+              "ToolTip": "C:\\Source\\iot_c_2025\\day2\\pointer.c",
+              "RelativeToolTip": "pointer.c",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2025-03-12T07:31:16.116Z",
               "EditorCaption": ""
             }
           ]

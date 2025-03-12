@@ -60,5 +60,26 @@
     <ClCompile Include="for1.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="gugudan_withforwhile.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="func1.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="func2.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="func3.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="func4.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="pointer.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="calcu_program.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

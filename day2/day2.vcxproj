@@ -127,12 +127,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="calcu_program.c" />
     <ClCompile Include="for.c" />
     <ClCompile Include="for1.c" />
+    <ClCompile Include="func1.c" />
+    <ClCompile Include="func2.c" />
+    <ClCompile Include="func3.c" />
+    <ClCompile Include="gugudan_withforwhile.c" />
     <ClCompile Include="if2.c" />
     <ClCompile Include="casting.c" />
     <ClCompile Include="if.c" />
     <ClCompile Include="oper2.c" />
+    <ClCompile Include="func4.c" />
+    <ClCompile Include="pointer.c" />
     <ClCompile Include="switch3.c" />
     <ClCompile Include="shift.c" />
     <ClCompile Include="oper1.c" />
