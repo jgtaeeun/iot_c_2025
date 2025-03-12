@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Source\\iot_c_2025\\day2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EF46615D-0ECD-4DD2-8407-D2C697B86019}|day2.vcxproj|C:\\Source\\iot_c_2025\\day2\\oper1.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EF46615D-0ECD-4DD2-8407-D2C697B86019}|day2.vcxproj|solutionrelative:oper1.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "oper1.c",
+              "DocumentMoniker": "C:\\Source\\iot_c_2025\\day2\\oper1.c",
+              "RelativeDocumentMoniker": "oper1.c",
+              "ToolTip": "C:\\Source\\iot_c_2025\\day2\\oper1.c",
+              "RelativeToolTip": "oper1.c",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2025-03-12T01:11:29.882Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
