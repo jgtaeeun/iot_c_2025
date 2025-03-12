@@ -127,14 +127,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="for.c" />
+    <ClCompile Include="for1.c" />
+    <ClCompile Include="if2.c" />
     <ClCompile Include="casting.c" />
     <ClCompile Include="if.c" />
     <ClCompile Include="oper2.c" />
+    <ClCompile Include="switch3.c" />
     <ClCompile Include="shift.c" />
     <ClCompile Include="oper1.c" />
     <ClCompile Include="scanf_enterkey.c" />
     <ClCompile Include="scanf_review.c" />
+    <ClCompile Include="switch.c" />
+    <ClCompile Include="switch2.c" />
     <ClCompile Include="while.c" />
+    <ClCompile Include="while1.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

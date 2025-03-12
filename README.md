@@ -336,7 +336,7 @@
     }
     ```
    ```c
-    switch case(조건식){
+    switch (조건식){
 
         case 상수식1:
             실행문1;
@@ -465,6 +465,70 @@
         - 재귀호출 함수는 자기 자신을 다시 호출한다. 함수 안에 재귀호출을 멈추는 조건이 있어야 한다.
 
 - 08 배열
+    - **배열의 이름은 배열의 인덱스 0의 주소이다. ->scanf일 때 배열이름 단독의 경우 & 적지 않는다!!**
+    - 문자열배열
+        - sizeof(배열이름)은 배열크기이다. 
+        - 널문자를 고려한 배열크기
+        -**초기화하지 않는 경우 반드시 널문자도 저장해야 한다.**
+        ```C
+        char str[80];
+        str[1] = 'a';
+        str[2] = 'p';
+        str[3] = 'p';
+        str[4] = 'l';
+        str[5] = 'e';
+        str[6] = '\0';   //마지막 문자 다음에 반드시 널문자 대입!!
+        ```
+        - 문자열 처리
+            - strcpy() - 문자열 저장
+            - gets() - 문자열  한 줄 입력
+            - puts() - 문자열 출력 후 줄바꿈  
+            - scanf()  - 문자열 하나의 단어만 입력
+            - printf()- 문자열 출력 , 줄바꿈 문자 추가해줘야 함
+            <img src='./images/puts줄바꿈.png'>
+            ```C
+            #include <stdio.h>
+            #include <string.h>
+
+            int main(void) {
+                char str[30];
+                printf("문자열을 입력하세요");
+                gets(str);
+                printf("입력한 문자열이 맞습니까?");
+                puts(str);
+
+                return 0;
+            }
+            ```
+    - 정수형 배열
+        - 널문자 신경 쓸 필요 없다. 
+        - 요소의 수보다 초깃값이 적으면 남는 요소는 0으로 초기화된다.
+        - 중괄호로 배열의 값을 초기화하면 배열크기를 생략할 수 있다.
+        - 정수형 배열의 크기 
+        ```C
+        #include <stdio.h>
+
+        int main(void) {
+
+            int numbers[5];
+
+            int s = sizeof(numbers) / sizeof(numbers[0]);
+
+            for (int i = 0; i < s; i++) {
+
+                scanf_s("%d", &numbers[i]);
+
+            }
+
+            //출력
+            for (int j = 0; j < s; j++) {
+                printf("%d", numbers[j]);
+            }
+
+            return 0;
+        }
+        ```
+
 - 09 포인터
 - 10 배열과 포인터
 - 11 문자
@@ -693,10 +757,62 @@
             - 증감연산자 (전위/후위) [C](./day2/oper2.c)
 
 
-    - 05 선택문 & 06 반복문
-        - 제어
-            - 조건
-            - 반복
+    - 05 선택문
+        - IF문 [C](./day2/if.c) [C](./day2/if2.c)
+        - switch ~case [C](./day2/switch3.c)
+            - **switch (정수계열의 식,조건식) {case (정수계열의 상수식) : break;}**
+            - `break 문이 없다면, 하나의 case가 실행된 후, 그 아래 모든 case들이 차례로 실행됩니다. 이를 **"fall through"**라고 합니다.`
+            <img src='./images/switchcase.png'>
+            - 이중 switch문 [C](./day2/switch2.c)
+                ```C
+                #include <stdio.h>
+
+                int main(void) {
+
+
+                    int num = 312;
+
+                    while (1) {
+
+                        int n;
+                        printf("정수를 입력하세요:");
+                        scanf_s("%d", &n);
+
+                        switch (n == num) {
+                        case 1:
+                            printf("빙고\n");
+                            break;
+
+                        case 0:
+                            switch (n > num) {
+                            
+                            case 1: 
+                                printf("답은 %d보다 작음\n", n);
+                                break;
+                            case 0 :
+                                printf("답은 %d보다 큼\n", n);
+                                break;
+                            }
+                            break;
+                            
+                        }
+                        // 정답을 맞추었을 때 while 루프를 종료하도록 설정
+                        if (n == num) {
+                            break;
+                        }
+                    }
+
+                    return 0;
+                }
+                ```
+    - 06 반복문
+        - for문 [C](./day2/for.c)
+        ```C
+        for(초기식;조건식;증감식){}
+        ```
+        - while문 [C](./day2/while1.c)
+        - break, continue [C](./day2/for1.c)
+        - 무한반복 :for(;;) ,while(1) 
     - 08 배열
         - **배열의 이름은 배열의 인덱스 0의 주소이다. ->scanf일 때 배열이름 단독의 경우 & 적지 않는다!!**
         - 문자열배열의 경우, sizeof(배열이름)은 배열크기이다. 

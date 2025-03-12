@@ -39,5 +39,26 @@
     <ClCompile Include="while.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="if2.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="switch.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="switch2.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="switch3.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="for.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="while1.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="for1.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
