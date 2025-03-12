@@ -440,6 +440,23 @@
 
     - 여러가지 함수 유형
         - 재귀함수
+        ```C
+      
+       #include <stdio.h>
+
+        void fruit(int count);
+
+        int main() {
+            fruit(1); //fruit(3)이 종료되면 fruit(2)가 종료되고, 그 후 fruit(1)도 종료됩니다.
+            return 0;
+        }
+
+        void fruit(int count) {
+            printf("apple\n");
+            if (count == 3) return;
+            fruit(count + 1);
+        }
+        ```
 
 - 08 배열
 - 09 포인터
@@ -461,7 +478,7 @@
 - visual stdio 2022 설정
     - 도구-옵션-환경-일반-다크모드
     - 도구-옵션-환경-글꼴 및 색- 글자크기
-
+    - 도구-옵션-환경=글꼴 및 색- 글꼴 D2coding
 - visual stdio 2022로 .c 파일 만들기  [C](./day01/HelloWorld.c)
     - 빈프로젝트 -> 파일명, 파일경로 -> 소스파일 오른쪽마우스 - 추가 - 새항목 -> 파일명.c
     - 주석 
@@ -625,23 +642,50 @@
                 ```C
                 #include <stdio.h>
 
+
                 int main() {
-                    int n2 = 143;   // 1000 1111
-                    int res;
+                    //char는 일반적으로 signed입니다. 따라서 ch = 0x7f (127)는 양수로 해석됩니다.
+                    char ch = 0x7f;                 // 0b   0111 1111
+                    unsigned char uch = 0x7f;
+                    printf("ch:%x, uch:%x, ch:%u, uch:%u\n", ch, uch, ch, uch); 
 
-                    res = n2 << 1;				// 1 0001 111 => 1 0001 1110  :우측의 빈자리는 0으로 채운다.
-                    printf("res:%d\n", res);  //286
+                    // ch1은 char 타입이고, ch1 = 0x9f (159)는 signed char의 범위를 넘는 값입니다. char는 보통 -128에서 127까지의 값을 가질 수 있기 때문에, 159는 오버플로우가 발생합니다.
+                    // 오버플로우가 일어나면, 해당 값은 음수로 해석됩니다. 0x9f는 2의 보수 표현법에서 -97로 해석됩니다.
+                    char ch1 = 0x9f;                 // 0b   1001 1111
+                    unsigned char uch1 = 0x9f;
+                    printf("ch1:%x, uch1:%x\n", ch1, uch1); //ch1:ffffff9f, uch1:9f
 
-                    res = n2  >> 1;				// 100 0111  =>0(부호비트)100 0111 :좌측의 빈자리는 원래값의 부호비트로 채운다.
-                    printf("res:%d\n", res);  //71
+                    ch1 >>= 1; //1111 1111 1111 1111 1111 1111 1100 1111
+                    uch1 >>= 1;// 0100 1111
 
-                    						//  18 00000000  00000000  00000000  00000000  00000000  00000000  00000000  00010010 
-                    int n3 = -18;			//  -18은 18의 2의 보수로 구한다.11111111 11111111 11111111  11111111  11111111  11111111  11111111  11101110 
-                    res = n3 >> 1;			// 1(부호비트)1111111 11111111 11111111  11111111  11111111  11111111  11111111  11110111   ->2의 보수로 값을 구하면 부호는 음수, 값은 00001001 9이다.
-                    printf(" n3의 res:%d\n", res);  //-9    
+                    printf("ch1:%x, uch1:%x\n", ch1, uch1);  //ffffffcf, 4f
+                    printf("ch1:%d, uch1:%d\n", ch1, uch1);  //-49 ,79
                     return 0;
                 }
                 ```
+            - 형변환 연산자 [C](./day2/casting.c)
+                - 정수, 실수 연산결과는 실수이다.
+                ```C
+                #include <stdio.h>
+                int main() {
+                    int n = 10;
+                    double res;
+
+                    res = n / 3;  
+                    printf("res:%.1lf\n", res); // 3.0
+                    res =(double) n / 3;  
+                    printf("res:%.1lf\n", res);  // 3.3
+                    
+                    
+                    res = n / 3.0;              //정수 / 실수 =>실수
+                    printf("res:%.1lf\n", res); // 3.3
+
+                    return 0;
+                }
+                ```
+            - 삼항연산자 (조건연산자) [C](./day2/oper2.c)
+            - 증감연산자 (전위/후위) [C](./day2/oper2.c)
+
     - 05 선택문 & 06 제어문
         - 제어
             - 조건
