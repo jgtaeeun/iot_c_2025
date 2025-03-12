@@ -128,11 +128,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="casting.c" />
+    <ClCompile Include="if.c" />
     <ClCompile Include="oper2.c" />
     <ClCompile Include="shift.c" />
     <ClCompile Include="oper1.c" />
     <ClCompile Include="scanf_enterkey.c" />
     <ClCompile Include="scanf_review.c" />
+    <ClCompile Include="while.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -33,5 +33,11 @@
     <ClCompile Include="oper2.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="if.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="while.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

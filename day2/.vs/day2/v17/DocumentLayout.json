@@ -3,20 +3,8 @@
   "WorkspaceRootPath": "C:\\Source\\iot_c_2025\\day2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EF46615D-0ECD-4DD2-8407-D2C697B86019}|day2.vcxproj|C:\\Source\\iot_c_2025\\day2\\oper2.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EF46615D-0ECD-4DD2-8407-D2C697B86019}|day2.vcxproj|solutionrelative:oper2.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EF46615D-0ECD-4DD2-8407-D2C697B86019}|day2.vcxproj|C:\\Source\\iot_c_2025\\day2\\casting.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EF46615D-0ECD-4DD2-8407-D2C697B86019}|day2.vcxproj|solutionrelative:casting.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EF46615D-0ECD-4DD2-8407-D2C697B86019}|day2.vcxproj|C:\\Source\\iot_c_2025\\day2\\shift.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EF46615D-0ECD-4DD2-8407-D2C697B86019}|day2.vcxproj|solutionrelative:shift.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EF46615D-0ECD-4DD2-8407-D2C697B86019}|day2.vcxproj|C:\\Source\\iot_c_2025\\day2\\oper1.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EF46615D-0ECD-4DD2-8407-D2C697B86019}|day2.vcxproj|solutionrelative:oper1.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{EF46615D-0ECD-4DD2-8407-D2C697B86019}|day2.vcxproj|C:\\Source\\iot_c_2025\\day2\\while.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EF46615D-0ECD-4DD2-8407-D2C697B86019}|day2.vcxproj|solutionrelative:while.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,53 +19,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "oper2.c",
-              "DocumentMoniker": "C:\\Source\\iot_c_2025\\day2\\oper2.c",
-              "RelativeDocumentMoniker": "oper2.c",
-              "ToolTip": "C:\\Source\\iot_c_2025\\day2\\oper2.c",
-              "RelativeToolTip": "oper2.c",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAACAAAAAAAAAA==",
+              "Title": "while.c",
+              "DocumentMoniker": "C:\\Source\\iot_c_2025\\day2\\while.c",
+              "RelativeDocumentMoniker": "while.c",
+              "ToolTip": "C:\\Source\\iot_c_2025\\day2\\while.c",
+              "RelativeToolTip": "while.c",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-03-12T02:34:53.631Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "casting.c",
-              "DocumentMoniker": "C:\\Source\\iot_c_2025\\day2\\casting.c",
-              "RelativeDocumentMoniker": "casting.c",
-              "ToolTip": "C:\\Source\\iot_c_2025\\day2\\casting.c",
-              "RelativeToolTip": "casting.c",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-03-12T02:22:57.188Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "shift.c",
-              "DocumentMoniker": "C:\\Source\\iot_c_2025\\day2\\shift.c",
-              "RelativeDocumentMoniker": "shift.c",
-              "ToolTip": "C:\\Source\\iot_c_2025\\day2\\shift.c",
-              "RelativeToolTip": "shift.c",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-03-12T02:01:43.354Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "oper1.c",
-              "DocumentMoniker": "C:\\Source\\iot_c_2025\\day2\\oper1.c",
-              "RelativeDocumentMoniker": "oper1.c",
-              "ToolTip": "C:\\Source\\iot_c_2025\\day2\\oper1.c",
-              "RelativeToolTip": "oper1.c",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-03-12T01:11:29.882Z",
+              "WhenOpened": "2025-03-12T03:09:32.671Z",
               "EditorCaption": ""
             }
           ]
