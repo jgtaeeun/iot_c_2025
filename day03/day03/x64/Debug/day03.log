@@ -1,0 +1,4 @@
+﻿  array4.c
+C:\Source\iot_c_2025\day03\array4.c(32,9): warning C4477: 'printf' : 서식 문자열 '%s'에 'char *' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'int'입니다.
+C:\Source\iot_c_2025\day03\array4.c(32,9): warning C4313: 'printf': 서식 문자열의 '%s'이(가) int' 형식의 인수 1과(와) 충돌합니다.
+  day03.vcxproj -> C:\Source\iot_c_2025\day03\x64\Debug\day03.exe

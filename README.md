@@ -530,8 +530,85 @@
         ```
 
 - 09 포인터
+    - 포인터는 메모리를 사용하는 또 다른 방법이다.
+    - 주소연산자 &로 변수가 할당된 메모리의 위치를 확인한다.
+    - 포인터로 가리키는 변수를 사용할 때 간접 참조 연산자 * 를 쓴다.
+    - 주소는 메모리의 특정 위치를 가리키는 값으로, 그 자체는 변경할 수 없습니다. (상수처럼)
+    - 포인터는 주소를 저장하는 변수이기 때문에, 가리키는 주소를 변경할 수 있습니다. (변수처럼)
+    - 포인터의 크기는 주소의 크기와 같다.
+    - `포인터에 주소를 저장할 때는 가리키는 자료형이 같아야한다.`
+    <img src='./images/포인터사용.png'>
+    <img src='./images/포인터특징.png'>
+    ```C
+    #include <stdio.h>
+
+    int main(void) {
+
+        int a = 10, b = 20;
+        int total;
+        double average;
+
+        int *pa, *pb;
+        int* pt = &total;
+        double* pg = &average;
+        pa = &a;
+        pb = &b;
+
+        *pt = *pa + *pb;
+        *pg = (double) *pt / 2;
+
+        //printf("두 정수의 값 : %d , %d \n", *pa, *pb);
+        //printf("두 정수의 합 : %d  \n", *pt);
+        //printf("두 정수의 평균 : %.1lf \n", *pg);
+
+        printf("두 정수의 값 : %d , %d \n", a,b);
+        printf("두 정수의 합 : %d  \n", total);
+        printf("두 정수의 평균 : %.1lf \n", average);
+        return 0;
+    }
+    ```
+    ```C
+    #include <stdio.h>
+
+    int main(void) {
+        int a = 10, b = 20;
+        const int* pa = &a;
+
+        printf("변수 a 값: %d\n", *pa);
+
+        // *pa = 20; const는 변수명으로 직접참조할 수는 없다.
+        
+        // 변수의 주소로는 간접참조할 수 있다.
+        pa = &b;
+        printf("변수 a 값: %d\n", *pa);
+
+        pa = &a;
+        printf("변수 a 값: %d\n", *pa);
+        a = 20;
+        printf("변수 a 값: %d\n", *pa);
+
+        return 0;
+    }
+    ```
 - 10 배열과 포인터
 - 11 문자
+    - 버퍼를 사용하는 문자 입력
+    ```C
+    #include <stdio.h>
+
+    int main(void) {
+
+        char ch;
+        int i;
+
+        for (i = 0; i < 3; i++) {
+            scanf_s("%c", &ch, sizeof(ch));    //tiger
+            printf("%c", ch);                   //tig
+        }
+
+	return 0;
+    }
+    ```
 - 12 문자열
 - 13 변수영역, 데이터공유
 - 14 다차원과 포인터배열
@@ -840,10 +917,76 @@
             ```
 
     - 08 배열
-        - **배열의 이름은 배열의 인덱스 0의 주소이다. ->scanf일 때 배열이름 단독의 경우 & 적지 않는다!!**
-        - 문자열배열의 경우, sizeof(배열이름)은 배열크기이다. 
-        - 정수형 배열
-            - 널문자 신경 쓸 필요 없다. [C](./day01/value5.c)
-            - 요소의 수보다 초깃값이 적으면 남는 요소는 0으로 초기화된다.
-            - 중괄호로 배열의 값을 초기화하면 배열크기를 생략할 수 있다.
+        - 동일한 자료형을 연속적으로 저장하는 공간 ->인덱스를 사용한다.
+        - **배열의 이름은 첫번째요소의 주소다.**
+        - 배열은 for문으로 제어한다.
+        
+        - 정수형 배열 
+            - 초기화했을 경우, 배열크기 생략가능 [C](./day03/array.c)
+            - **배열이름 + 1 은 그 다음요소의 주소이다.** [C](./day03/array2.c)
+            ```C
+            	int ary[] = { 1,2,3 };
+                printf("배열의 전체크기: %d\n", sizeof(ary) );	//12
+                printf("배열의 한 요소의 크기: %d\n", sizeof(ary[0]));	//4
+                printf("배열의 요소 개수: %d\n", sizeof(ary)/sizeof(ary[0]));	//3
+
+                printf("배열 이름 : %p\n", &ary[0]);  // 00000039C1CFF638
+                printf("배열 첫번째 요소의 주소 : %p\n", ary);    // 00000039C1CFF638
+                printf("배열 두번째 요소의 주소 :%p\n", ary + 1);  //00000039C1CFF63C
+                // 첫번째요소 주소 + 4 = 두번째요소 주소임을 확인 => 주소는 4바이트
+            ```
+            - 배열을 0으로 초기화
+            ```C
+            // score배열을 0으로 초기화 하였을 때는 score = {0,0,0,0,0}으로 나옴
+            // score배열을 선언만 하고 초기화 하지 않았을 경우에는 쓰레기값이 나옴.
+            int score[5]= {0,};
+            ```
+            <img src='./images/정수형배열입력.png'>[C](./day03/array3.c)
+        - 문자열 배열 [C](./day03/array4.c)
+            - `char배열에 저장시 +1만큼의 크기가 필요하다. (널문자 포함 위해서) `
+            ```C
+            char str[5] = "apple";   // 널문자를 포함할 공간 부족
+            printf("str:%s\n", str);
+
+            char str2[6] = "apple";   
+            printf("str2:%s\n", str2);
+
+            char str3[7] = { 'o','r','a','n','g','e' };
+            printf("str3:%s\n", str3);
+            printf("str3[6]:%s\n", str3[6]);  //str3[6]:(null)
+
+            char str4[7];
+            str4[0] = 'o';
+            str4[1] = 'r';
+            str4[2] = 'a';
+            str4[3] = 'n';
+            str4[4] = 'g';
+            str4[5] = 'e';
+            str4[6] = '\0';    //널문자 포함해야 함
+            printf("str4:%s\n", str4);
+            ```
+            - 문자열 복사
+                - strcpy_s(배열, 크기, 배열)
+                - strcpy (배열, 배열) , #define _CRT_SECURE_NO_WARNINGS 
+            ```C
+            #include <stdio.h>
+            #include <string.h>
+            int main(void) {
+            char fruit[100] = "blueberry";
+            char str3[7] = { 'o','r','a','n','g','e' };
+
+            strcpy_s(fruit, sizeof(fruit), str3);
+            printf("fruit:%s\n", fruit);
+
+            strcpy_s(fruit, sizeof(fruit), "watermelon");
+            printf("fruit:%s\n", fruit);
+            	return 0;
+            }
+            ```
+    - 09 포인터
+    
+
+    - 10 배열과 포인터
+ 
+
                 
