@@ -1,2 +1,6 @@
 ﻿  calcu_program.c
+C:\Source\iot_c_2025\day2\calcu_program.c(35,11): warning C4477: 'scanf_s' : 서식 문자열 '%c'에 'unsigned int' 형식의 인수가 필요하지만 variadic 인수 2의 형식이 'size_t'입니다.
+      C:\Source\iot_c_2025\day2\calcu_program.c(35,11):
+      이 인수는 버퍼 크기로 사용됩니다.
+  
   day2.vcxproj -> C:\Source\iot_c_2025\day2\x64\Debug\day2.exe

@@ -31,8 +31,8 @@ int main(void) {
 		*/
 		
 		printf("계속 하시겠습니까? ");
-		scanf(" %c", &mode);  
-		
+		//scanf(" %c", &mode);  
+		scanf_s(" %c", &mode, sizeof(mode));
 		
 
 		if (mode == 'q') {
