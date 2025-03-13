@@ -131,9 +131,20 @@
     <ClCompile Include="array2.c" />
     <ClCompile Include="array3.c" />
     <ClCompile Include="array4.c" />
+    <ClCompile Include="char.c" />
+    <ClCompile Include="char1.c" />
+    <ClCompile Include="getchar.c" />
     <ClCompile Include="pointer2.c" />
     <ClCompile Include="pointer.c" />
     <ClCompile Include="pointer1.c" />
+    <ClCompile Include="pointer3.c" />
+    <ClCompile Include="pointer4.c" />
+    <ClCompile Include="pointer5.c" />
+    <ClCompile Include="pointer6.c" />
+    <ClCompile Include="pointer7.c" />
+    <ClCompile Include="pointer8.c" />
+    <ClCompile Include="char3.c" />
+    <ClCompile Include="scanfbuffer.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -591,6 +591,44 @@
     }
     ```
 - 10 배열과 포인터
+    - 배열명은 첫번째 요소의 주소이다.
+    ```c
+    int ary[5];
+    int* p;
+    p = &ary[0] ;       //p = ary;
+    * p = 10 ;          // ary[0]= 10;
+    * (p + 1) = 20 ;    // ary[1]= 20;
+    ```
+    - 포인터에 배열명을 저장하면 배열명처럼 사용할 수 있다.
+     ```c
+    int ary[5];
+    int* p;
+    p = ary;
+    p[0] = 1 ;  //ary[0] =1;
+
+    printf("p[0]:%d\n", p[0]);   //1
+    printf("ary[0]:%d", ary[0]);  //1
+    ```
+    - 배열명의 정수 덧셈은 가리키는 자료형의 크기를 곱해서 더한다. 
+    ```c
+    int ary[5];
+    int* p;
+    p = ary;
+    printf("p : %p \n" ,p);         //p : 0000001C54B9F528
+    printf("p +1 : %p \n" ,p+1);    //p +1 : 0000001C54B9F52C
+    ```
+    - 포인터의 뺄셈 결과는 배열 요소간의 간격 차이를 의미한다.
+    ```c
+    int ary[5];
+    int *p = ary;
+    int *q ;
+    q = p+3 ;
+    p++;
+    printf("q= %p",q );    //q= 0000009A31B6FB64
+    printf("p = %p",p );   //p = 0000009A31B6FB5C
+    printf("q- p = %d",q- p );   //2    (q-p)/sizeof(int)
+    ```
+    <img src='./images/배열과포인터.png'>
 - 11 문자
     - 버퍼를 사용하는 문자 입력
     ```C
@@ -606,9 +644,19 @@
             printf("%c", ch);                   //tig
         }
 
+        //\0은 문자열의 끝을 나타내지만, "%c" 형식으로 읽을 때는 그것이 문자로 출력되지 않기 때문입니다.
+        for (i = 0; i < 6; i++) {
+            scanf_s("%c", &ch, sizeof(ch));    //tiger
+            printf("%c", ch);                   //tiger
+        }
+
 	return 0;
     }
     ```
+    - scanf함수는 입력할 때 가장 먼저 버퍼의 상태를 확인한다. ->getchar()로 기존 입력 지우기
+    - 버퍼에 저장되는 데이터의 끝에는 항상 개행 문자가 있다.
+    - scanf gkatnsms ctrl + z를 누르면 EOF(-1)를 반환한다.
+    
 - 12 문자열
 - 13 변수영역, 데이터공유
 - 14 다차원과 포인터배열
@@ -1034,9 +1082,115 @@
             2. 변수의 범위 :선언된 함수나 블록 내에서만 유효합니다. 즉, 다른 함수에서는 접근할 수 없습니다. 하지만 그 값은 프로그램 실행 중 계속 유지됩니다.
             3. 초기화 : static 변수는 명시적으로 초기화하지 않으면 자동으로 0으로 초기화됩니다. 예를 들어, static int num;와 같이 선언하면, num은 0으로 초기화됩니다.
             함수가 종료된 후에도 변수의 값이 유지되므로, 다음 함수 호출 시 그 값이 그대로 사용됩니다.
-       
-        
-    - 10 배열과 포인터 
- 
+        - `포인터의 기능: 함수 간에 효과적으로 데이터를 공유하는 것`
+            - main함수 내 swap 함수 [C](./day03/pointer2.c)
+            - main함수 내에서 swap함수 호출 
+                - 변수값으로 swap함수 호출 [C](./day03/pointer3.c)
+                - `주소값으로 swap함수 호출` [C](./day03/pointer4.c)
 
-                
+        
+    - 10 배열과 포인터  [C](./day03/pointer5.c)
+        ```c
+        int ary[5];
+        int* pa = ary ;     //ary = &ary[0]
+        
+        *pa = 10 ; // ary[0]=10
+        *(pa +1) =20 ; // ary[1] =20
+
+        printf("pa: %d \n", pa+0);     //ary[0]의 주소
+        printf("pa + 1 : %d \n", pa+1);   //ary[1]의 주소
+        //pa+0 , pa+1은 4바이트 차이난다.
+
+        printf("pa[1]: %d \n", pa[1])  // pa = ary 이므로 pa[1] = ary[1] , 즉 [ ] == *(  )
+        ```
+        ```C
+        #include <stdio.h>
+
+        int main() {
+
+            char name[20];
+            char* p = name;
+            *p = 'c';
+            *(p + 1) = 'o';
+
+            printf("name[0]:%c\n", name[0]);  //name[0]:c
+            printf("name[1]:%c\n", *(p + 1));  //name[1]:o
+            printf("name[0]의 주소:%p\n", name);  //name[0]의 주소:0000002DA02FF9A8
+            printf("name[1]의 주소:%p\n", (p + 1));  //name[1]의 주소:0000002DA02FF9A9
+            return 0;
+        }
+        ```
+        - 배열의 크기를 함수 내에서 알 수 있도록 하려면, 배열을 포인터로 넘길 경우에는 크기를 알 수 없기 때문에 sizeof 연산자가 제대로 작동하지 않습니다. 따라서 배열 크기를 c와 같이 매개변수로 전달하거나, 배열의 끝을 특정 값으로 표시하여 배열 크기를 추적하는 방법을 사용하는 것이 일반적입니다.  [C](./day03/pointer6.c)
+
+        - 실습 - 배열에 값을 입력하고 출력하는 함수 [C](./day03/pointer8.c)
+            - `배열을 출력하는 함수에 필요한 것은 배열명(시작주소)이다.`
+            - `배열을 입력하는 함수에 필요한 것은 배열명(시작주소)이다.`
+            - 배열의 크기가 달라도 입출력이 가능하려면 배열 요소의 개수를 알아야 한다. (for문의 조건식을 위해서)
+        ```c
+        #include <stdio.h>
+        void inputAry(int*, int);
+        void printAry(int*, int);
+
+        int main(void) {
+
+            int ary[5];
+            int size = sizeof(ary) / sizeof(ary[0]);
+
+            inputAry(ary, size);
+            printAry(ary, size);
+            return 0;
+        }
+
+        void inputAry(int* p, int c) {
+            for (int i = 0; i < c; i++) {
+                scanf_s(" %d", p + i);
+            }
+
+        }
+
+        void printAry(int* p, int c) {
+            for (int i = 0; i < c; i++) {
+                printf("%d ", *(p + i));
+            }
+
+        }
+        ```
+
+        - const [C](./day03/pointer7.c)
+            - `포인트 상수 int * const` - 이 포인터는 다른 주소를 가리킬 수 없지만, 포인터변수로 값을 변경할 수 있다.
+            - `데이터 상수 const int *` - 포인터변수로 값을 변경할 수 없다. 포인터 자체는 다른 주소를 가리킬 수 있습니다.
+        ```c
+        int num4 = 5, num5 = 10;
+
+        const int* pn2 = &num4;			//데이터상수 
+                                        
+
+        //*pn2 = 100;	 포인터변수를 통한 데이터의 변경을 불허한다./포인터 자체는 변경 가능합니다.
+        num4 = 100;
+        pn2 = &num4;
+
+
+        num4 = 5;
+        int* const pnum3 = &num5;			//포인터 상수
+        //pnum3 = &num4;  // 포인트변수가 가리키는 주소의 변경을 불허한다.
+        *pnum3 = num4;
+            
+        ```
+
+    - 11 문자
+        - scanf함수를 사용한 문자 입력 [C](./day03/char.c)
+            -**공백, 탭, 개행문자를 제외하려면 %c앞에 공백, 탭, 개행문자 중 하나 이상을 추가한다.**
+        ```c
+        scanf(" %c %c ", &ch1, &ch2);
+        ```
+        - 문자입출력 함수 getchar() , putchar() [C](./day03/getchar.c)
+        ```c
+        int ch;             
+
+        ch = getchar();				//한문자를 읽어오는 함수
+
+        putchar(ch);				//한문자를 출력하는 함수 , 개행문자 포함하지 않음
+        putchar('\n');              //개행문자
+        ```
+        <img src='./images/문자입출력함수.png'>
+        - 실습 :아스키코드 변환 [C](./day03/char3.c)
