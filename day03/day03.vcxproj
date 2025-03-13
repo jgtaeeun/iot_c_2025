@@ -131,8 +131,9 @@
     <ClCompile Include="array2.c" />
     <ClCompile Include="array3.c" />
     <ClCompile Include="array4.c" />
+    <ClCompile Include="pointer2.c" />
     <ClCompile Include="pointer.c" />
-    <ClCompile Include="scanf.c" />
+    <ClCompile Include="pointer1.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
