@@ -1,0 +1,36 @@
+<문자>
+1.
+getchar(); # 버퍼에 입력된 문자열의 문자 한개씩 읽어온다.
+
+while (1) {
+	char c = getchar();
+	if (c == '\n') break; //문자열입력하고 엔터키치는데 엔터키가 인식되는 것은 문자열이 끝났음이므로
+	printf("%c ", c); 
+}
+
+2.
+scanf(); #엔터키로 입력한다.
+
+입력값이 " HELLO World"일 때, 
+char ch[20];
+scanf("%s", ch);  // ch: 아무 것도 저장되지 않음.
+scanf("%s", ch);  // ch: HELLO
+
+char ch[20];
+scanf(" %s", ch);  // ch: "HELLO"
+scanf("%s", ch);  // ch:World
+
+
+while (1) {
+
+	char c;
+
+	//" %s"에서 공백을 앞에 추가한 이유는 입력에서 발생하는 앞의 공백(스페이스, 탭, 개행 문자 등)을 무시하기 위함입니다. 
+	if (scanf(" %c", &c) == -1) break;			//EOF이면 종료, 스페이스,탭,개행문자는 입력받지 않음. 나머지는 입력받음
+	printf("받은 문자열:%c\n", c);
+}
+
+
+*EOF(-1)는 CTRL + Z 입력하면 됨
+
+

@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Source\\iot_c_2025\\day04\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{45C3DDC7-03C0-4479-8C35-88F485FB28F7}|day04.vcxproj|C:\\Source\\iot_c_2025\\day04\\func.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{45C3DDC7-03C0-4479-8C35-88F485FB28F7}|day04.vcxproj|solutionrelative:func.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45C3DDC7-03C0-4479-8C35-88F485FB28F7}|day04.vcxproj|C:\\Source\\iot_c_2025\\day04\\getchar0314.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{45C3DDC7-03C0-4479-8C35-88F485FB28F7}|day04.vcxproj|solutionrelative:getchar0314.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "getchar0314.c",
+              "DocumentMoniker": "C:\\Source\\iot_c_2025\\day04\\getchar0314.c",
+              "RelativeDocumentMoniker": "getchar0314.c",
+              "ToolTip": "C:\\Source\\iot_c_2025\\day04\\getchar0314.c",
+              "RelativeToolTip": "getchar0314.c",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2025-03-14T03:47:27.211Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "func.c",
+              "DocumentMoniker": "C:\\Source\\iot_c_2025\\day04\\func.c",
+              "RelativeDocumentMoniker": "func.c",
+              "ToolTip": "C:\\Source\\iot_c_2025\\day04\\func.c",
+              "RelativeToolTip": "func.c",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABoAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2025-03-14T03:38:05.834Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -658,6 +658,16 @@
     - scanf gkatnsms ctrl + z를 누르면 EOF(-1)를 반환한다.
     
 - 12 문자열
+    - %s 포맷 지정자는 문자열의 **끝에 널 종료 문자가 나타날 때까지 문자열을 출력합니다.
+    ```c
+    #include <stdio.h>
+    int main(){
+        char *dessert = "apple";
+        printf("dessert 자체: %p\n", dessert);  // dessert는 "apple"의 시작 주소를 가리킴
+        printf("dessert가 가리키는 문자열: %s\n", dessert); //
+        return 0;
+    }
+    ```
 - 13 변수영역, 데이터공유
 - 14 다차원과 포인터배열
 - 15 응용포인터
@@ -1194,3 +1204,139 @@
         ```
         <img src='./images/문자입출력함수.png'>
         - 실습 :아스키코드 변환 [C](./day03/char3.c)
+
+
+## 29일차(3/14)
+- 11 문자
+    - 실습 - getchar()  [C](./day04/getchar0314.c)
+
+- C 언어에서 프로그램이 실행될 때 메모리
+    1. 코드 세그먼트 (Code Segment):
+        - 프로그램의 실행 코드가 저장되는 영역입니다.
+        - C 언어로 작성된 프로그램에서 컴파일된 기계어 코드가 이곳에 저장됩니다.
+        - 이 영역은 읽기 전용으로 보호되어 있습니다. 즉, 실행 중에 코드가 수정되는 일은 없으며, 수정이 필요하면 다시 컴파일을 통해 새로운 프로그램을 만들어야 합니다.
+    2. 데이터 세그먼트 (Data Segment):
+        - 힙 (Heap): 사용자에게 할당된 메모리 영역 ,동적 메모리 할당이 이루어지는 영역입니다. malloc(), free()와 같은 함수를 사용하여 메모리를 할당하거나 해제할 수 있습니다.
+        - 스택 (Stack): 지역변수, 매개변수 등 함수가 호출되면 스택에 새로운 프레임이 쌓이고, 함수가 종료되면 해당 프레임이 스택에서 제거됩니다.
+        - Data (초기화된 데이터 영역 (Initialized Data Segment)) : 전역변수, static 
+        - Rod (초기화되지 않은 데이터 영역 (BSS Segment)): 문자열상수, 리터럴
+- 12 문자열
+    - strlen(문자열) -`문자열은 널문자를 포함한다. strlen(문자열)은 널문자 제외한 문자개수이다.`
+    - 문자열 리터럴 [C](./day04/string.c)
+        - **문자열 상수는 주소이다. 주소는 변경가능하다.** [C](./day04/string2.c)
+        - **문자열 상수는 값을 변경할 수 없다.**
+        - 문자열 상수는 항상 자동으로 널 문자(\0)를 포함합니다.
+    ```c
+    
+    #include <stdio.h>
+
+    int main(void) {
+        char str[100] = "orange";		//\0널문자 자동 저장
+            
+        printf("%s\n", str);			//배열 인덱스에 문자 한개씩 저장 , 데이터 세그먼트의 Data 메모리
+        printf("%s\n", "orange");		// 데이터 세그먼트의 Rod 메모리
+        
+        // 문자열 이름 = 주소
+        printf("%p\n", "orange");
+        printf("%p\n", "orange"+1);
+
+        // 문자열 이름에 간접참조 연산자 = 문자열 첫번째 요소 o
+        printf("%c\n", *"orange");  //o
+        printf("%c\n", "orange"[1]); //r
+
+        "orange"[0] = '0';    // 문자열 리터럴을 수정하려고 시도했기 때문입니다. 문자열 리터럴은 상수로 취급되며, 수정이 불가능한 메모리 영역에 저장됩니다.
+        *"orange"= '0';		// 문자열 리터럴을 수정하려고 시도했기 때문입니다. 문자열 리터럴은 상수로 취급되며, 수정이 불가능한 메모리 영역에 저장됩니다.
+
+        return 0;
+    }
+    ```
+    - 문자열 입력 함수 [C](./day04/string3.c)
+        - scanf("%s", str);의 경우 공백 주의 필요   
+            - %s는 공백을 포함하지 않는 문자열을 읽을 때 사용됩니다.
+        - gets(str); 
+            - 사용자로부터 문자열을 입력받을 때 공백을 포함한 문자열을 받을 수 있도록 돕지만 보안상 문제가 있어 현대 C 프로그래밍에서는 사용하지 않는 것이 좋습니다.
+            - gets함수는 개행문자 대신 널문자를 붙인다. 
+            <img src='./images/gets함수.png'>
+        - fgets(str, sizeof(str), stdin);
+            - 사용자로부터 문자열을 입력받을 때 공백을 포함한 문자열을 받을 수 있음
+            - fgets함수는 개행문자, 널문자 다 붙인다.
+             <img src='./images/fgets함수.png'>
+        ```C
+        char str[100];
+        printf("문자열 입력>> ");  //언더커버 하이스쿨
+        scanf("%s", str);
+        
+        printf("받은 문자열 >> %s\n", str);//언더커버
+        scanf("%s", str);
+        printf("다음 문자열 >> %s\n", str);//하이스쿨
+
+        printf("공백을 포함한 입력:");  //언더커버 하이스쿨
+        gets(str);
+        printf("입력 문자열:%s\n", str);  //언더커버 하이스쿨
+
+        printf("공백을 포함한 입력:");  //언더커버 하이스쿨 금요일밤
+        fgets(str, sizeof(str), stdin);
+        printf("입력 문자열:%s\n", str);  //언더커버 하이스쿨 금요일밤
+        ```
+
+        ```C
+        /*입력값이 " HELLO World"일 때, */
+        char ch[20];
+        scanf("%s", ch);  // ch: 아무 것도 저장되지 않음.
+        scanf("%s", ch);  // ch: HELLO
+
+        char ch[20];
+        scanf(" %s", ch);  // ch: "HELLO"
+        scanf("%s", ch);  // ch:World
+        ```
+    - 문자열 출력 함수 [C](./day04/string4.c)
+        - puts(str);  -개행문자 포함
+        - fputs(str, stdout); -개행문자 포함하지 않음
+       ```C
+        char str[100] = "Delmonte orange";
+
+        printf("%s\n", str);
+        puts(str);  //개행문자 포함
+        fputs(str, stdout); //개행문자 포함하지 않음
+        return 0;
+       ```
+    - 문자열 복사함수
+        - 내장함수   [C](./day04/strcpy.c)
+            - #define _CRT_SECURE_NO_WARNINGS 
+            - strcpy(복사, 원본);  
+            - strncpy(복사, 원본, 개수) 
+            ```C
+            char str[100] = "orange";
+            char* ps = "blueberry";  
+
+            strncpy(str, ps, 4);      //시작주소부터 복사할 문자갯수를 설정할 수 있다. 
+            printf("str:%s\n", str);  // orange -> bluege
+            ```
+            - strcpy() 함수는 복사받는 곳이 배열이어야 하는 이유는, 배열이 고정된 크기의 메모리 공간을 제공하고, 그 배열에 안전하게 문자열을 복사할 수 있기 때문입니다. 포인터를 사용하려면, 복사받을 메모리 공간을 명시적으로 할당해야 하며, 이때 메모리 관리에 신경 써야 합니다.
+        - strcpy 기능을 사용자함수로 구현 [C](./day04/strcpy3.c)
+
+    - 문자열 길이 strlen() [C](./day04/strlen.c)
+    - 문자열 결합 strcat(), strncat()  [C](./day04/strcat.c)
+        ```c
+        char str[100] = "blue";
+
+        strcat(str, "berry");
+        printf("str :%s\n", str);     //str :blueberry
+
+        strncat(str, "orange", 3);
+        printf("str :%s\n", str);        //str :blueberryora
+
+        ```
+        - strcat()함수는 최초로 붙일 때는 초기화를 해야한다
+        ```C
+        char dest[50];  // 초기화되지 않음
+        char dest[50] = "";  // 올바른 예시: 초기화 후 사용
+        ```
+        - strcat() 함수는 문자열을 이어 붙일 때, 대상 문자열(str)이 빈 문자열이 아니어도 값이 들어 있으면 그 뒤에 문자열을 덧붙입니다. 중요한 점은 대상 문자열에 충분한 공간이 있어야 한다는 것입니다. 
+    - 문자열 비교 strcmp() -사전에 나오는 순서 [C](./day04/strcmp.c)
+    ```c
+    // 문자열 str1이 str2보다 크면 1반환
+    // 문자열 str1이 str2보다 작으면 -1반환
+    // 문자열 str1이 str2과 같은 문자열이면 0반환
+    strcmp(str1, str2) ; 
+    ```
