@@ -669,7 +669,167 @@
     }
     ```
 - 13 변수영역, 데이터공유
+    - auto 지역변수
+        - 함수 내에서만 유효하고, 함수가 종료되면 소멸됩니다.
+        - 기본적으로 초기화되지 않으면 값이 지정되지 않은 채로 사용될 수 있습니다.
+        - 지역변수와 전역변수의 사용범위가 겹치면 지역변수를 먼저 사용한다.
+    - 전역변수 
+        - 함수 외부에 선언되며, 모든 함수에서 접근할 수 있습니다.
+        - 기본값으로 0으로 초기화됩니다 (명시적으로 초기화하지 않더라도)
+        - 프로그램이 시작될 때 메모리에 할당되고 종료될 때까지 유효합니다.
+        - 프로그램의 어느 곳에서든 참조할 수 있지만, 남용하면 코드의 가독성 및 유지보수성이 떨어질 수 있습니다.
+
+    - static 지역변수 
+        - 초기화가 한 번만 수행되고, 이후에는 이전 값을 유지합니다.
+        - 함수가 종료되어도 값이 사라지지 않습니다.
+        - 전역 변수와 유사하지만, 그 범위(scope)는 함수 내에서만 유효합니다.
+        ```C
+        #include <stdio.h>
+
+        void counter() {
+            static int count = 0;  // static 지역 변수
+            count++;
+            printf("count = %d\n", count);
+        }
+
+        int main() {
+            counter();  // count = 1
+            counter();  // count = 2
+            counter();  // count = 3
+            return 0;
+        }
+        ```
+    - 레지스터 변수 
+        - register 키워드로 선언된 변수는 가능한 한 CPU 레지스터에 저장됩니다. 레지스터는 메모리보다 훨씬 빠르기 때문에 성능을 최적화할 수 있습니다.
+        - 레지스터에 할당될 수 없는 경우, 일반 메모리에 저장됩니다.
+        - 전역변수는 레지스터 변수로 선언할 수 없다. 
+        - 레지스터 변수는 주소를 구할 수 없다.  (& 연산자 사용 불가).
+        - 레지스터의 사용여부는 컴파일러가 결정한다.
+    
+        ```C
+        //  i는 register 변수로, CPU 레지스터에 저장될 수 있습니다. 하지만 시스템에 따라 레지스터가 부족하면 일반 메모리에 할당될 수 있습니다.
+        #include <stdio.h>
+
+        void example() {
+            register int i;  // 레지스터 변수 i
+            for (i = 0; i < 5; i++) {
+                printf("%d ", i);
+            }
+        }
+
+        int main() {
+            example();  // 0 1 2 3 4 출력
+            return 0;
+        }
+        ```
+        <img src='./images/변수요약.png'>
+    
+    - 데이터 공유
+        - 값을 복사해서 전달하면 호출하는 함수의 값은 바뀌지 않는다.
+        - 호출하는 함수의 값이 바뀌려면 주소를 인수로 전달해야 한다.
+        - `정적 지역변수나 전역 변수와 같이 함수가 반환된 후에도 저장공간이 유지되는 경우만 주소를 반환한다.`
+
 - 14 다차원과 포인터배열
+    - 2차원 int 배열 초기화
+    <img src='./images/2차원배열초기화.png'>
+        ```c
+            #include <stdio.h>
+
+            void printAry(int p[3][4]) { // 2차원 배열을 정확히 받도록 수정
+                for (int i = 0; i < 3; i++) { // 행을 반복
+                    for (int j = 0; j < 4; j++) { // 열을 반복
+                        printf("%d ", p[i][j]); // 각 원소 출력
+                    }
+                    printf("\n"); // 한 행을 출력한 후 개행
+                }
+            }
+
+            int main(void) {
+                int num[3][4] = { {1},{5,6},{9,10,11} }; // 2차원 배열 정의
+                int num2[][4] = { {1},{2,3},{4,5,6} }; // 행 크기 생략 가능, 자동으로 3행 4열로 설정
+                int num3[3][4] = { 1,2,3,4,5,6,7,8,9,10,11,12 }; // 3x4 배열 초기화
+                int num4[3][4] = { 1,2,3,4,5,6 }; // 부분 초기화된 3x4 배열
+                int num5[][4] = { 1,2,3,4,5,6 }; // 또 다른 배열
+
+                printAry(num); // num 배열 출력
+                return 0;
+            }
+
+        ```
+    - 2차원 배열 행, 열
+        - 행 (Row): animal[0], animal[1], ..., animal[4] (첫 번째 인덱스 0~4)
+        - 열 (Column): animal[][0], animal[][1], ..., animal[][19] (두 번째 인덱스 0~19)
+        ```C
+        char animal[5][20];  // 5개의 행과 20개의 열
+
+        animal[0][0] = 'C';  // 첫 번째 행의 첫 번째 열에 'C'를 저장
+        animal[0][1] = 'a';  // 첫 번째 행의 두 번째 열에 'a'를 저장
+        ```
+    - 2차원 char 배열 초기화
+        - 문자열 상수로 한 행씩 초기화, 행의 수 생략 가능
+        ```C
+        char animal[][10] = { "dog","cat","panda","lubao","aibao"};
+        for (int i = 0; i < 5; i++) {
+            printf("%s\n", animal[i]);
+        }
+        ```
+    - 포인터 배열 type *array[size]
+        - 포인터 배열은 포인터들을 원소로 갖는 배열입니다. 즉, 배열의 각 요소가 포인터인 배열입니다.
+        ```C
+        #include <stdio.h>
+
+        int main() {
+            int a = 10, b = 20, c = 30;
+            int *arr[3];  // 포인터 배열 선언, arr은 3개의 int 포인터를 가짐
+
+            arr[0] = &a;  // arr[0]은 a의 주소를 가리킴
+            arr[1] = &b;  // arr[1]은 b의 주소를 가리킴
+            arr[2] = &c;  // arr[2]은 c의 주소를 가리킴
+
+            // 포인터 배열을 사용하여 값 출력
+            printf("arr[0] = %d\n", *arr[0]);  // 10 출력
+            printf("arr[1] = %d\n", *arr[1]);  // 20 출력
+            printf("arr[2] = %d\n", *arr[2]);  // 30 출력
+
+            return 0;
+        }
+        ```
+        - 포인터 배열을 선언하고 사용하는 방법은 일반 배열과 같다.
+        ```C
+        int main(void) {
+
+        char* pary[2];
+        int i;
+        
+        pary[0] = "dog";    //문자열상수는 널문자 포함, dog의 d의 주소를 pary[0]에 저장
+        pary[1] = "tiger";
+
+        for (i = 0; i < 2; i++) {
+            printf("%s\n", pary[i]);
+        }
+        return 0;
+        }
+        ```
+        <img src='./images/포인터배열선언과초기화.png'>
+    - 배열 포인터 type (*pointer)[size] 
+        - 배열을 가리키는 포인터는 배열의 첫 번째 요소를 가리키고, 배열의 크기 정보를 알고 있을 수 있습니다.
+        ```C
+        #include <stdio.h>
+
+        int main() {
+            int arr[3] = {1, 2, 3};  // 배열 선언
+            int (*ptr)[3] = &arr;     // 배열 포인터,  크기가 3인 int 배열을 가리키고 있습니다.
+
+            // ptr을 사용하여 배열 요소에 접근
+            printf("arr[0] = %d\n", (*ptr)[0]);  // 1 출력
+            printf("arr[1] = %d\n", (*ptr)[1]);  // 2 출력
+            printf("arr[2] = %d\n", (*ptr)[2]);  // 3 출력
+
+            return 0;
+        }
+        ```
+    - 포인터 배열 실습 [C](./day05/intpointarray.c)  [C](./day05/charpointarray.c) 
+    - 배열 포인터 실습 [C](./day05/arraypointer.c)
 - 15 응용포인터
 - 16 메모리 동적할당
 - 17 사용자 정의 자료형
@@ -1339,4 +1499,392 @@
     // 문자열 str1이 str2보다 작으면 -1반환
     // 문자열 str1이 str2과 같은 문자열이면 0반환
     strcmp(str1, str2) ; 
+    ```
+
+## 30일차(3/17)
+- 배열 입력
+    ```C
+    scanf("%d", &pi[0]) 또는 scanf("%d", pi);
+    ```
+- **lvalue(변수), RValue(상수, 변수)**
+```C
+char str[100] = "홍길동";   //옳은 표현
+char str2[100];
+//str2 = "홍길동";            //틀린 표현, str2는 배열이름은 주소이름이므로 상수이다. lvalue는 변수여야 한다.
+str2[0]='h';
+str2[1]='\0';
+
+```
+- **문자열배열 초기화는 인덱스에 하나씩 넣거나 strcpy()를 한다.**
+- `문자열 포인터 배열에서 p[i]는 문자열의 시작 주소를 가리킵니다. printf 함수는 이 주소가 가리키는 문자열 전체를 출력할 수 있기 때문에, * 없이 그냥 p[i]만 사용해도 됩니다.`
+- C 언어에서 sum 함수와 변수명을 동일하게 사용할 때 발생하는 문제를 묻는 거군요! C 언어에서도 마찬가지로 함수명과 변수명이 동일할 경우 충돌이 발생할 수 있습니다. 다만, C 언어에서는 내장 함수 sum()은 없지만, 사용자가 sum이라는 이름을 함수로 정의하고 변수로도 동일한 이름을 사용할 때 문제가 발생할 수 있습니다.
+
+- 15 응용포인터
+  
+    - 함수포인터 [C](./day05/cal.c)  [C](./day05/cal2.c)
+        - 함수이름은 함수정의 메모리 첫 주소이다.
+        ```C
+        #include <stdio.h>
+
+        int sum(int a, int b);
+        int minus(int a, int b);
+
+
+        int main(void) {
+
+            int (*fp) (int, int);	// 함수포인터
+
+            int res;
+            
+            fp = sum;
+            res = fp(10, 20);
+            //res =sum(10, 20);
+            printf("sum(10, 20)=%d\n", res);
+            
+            fp = minus;
+            res = fp(10, 20);
+            //res = minus(10, 20);
+            printf("minus(10, 20)=%d\n", res);
+            return 0;
+        }
+
+        int sum(int a, int b) {
+            return  a + b;
+        }
+
+        int minus(int a, int b) {
+            return  a - b;
+        }
+        ```
+    ```C
+    #include <stdio.h>
+
+    int sum(int, int);
+    int minus(int, int);
+    int mul(int, int);
+    int div(int, int);
+
+    void func(int(*fp)(int, int));
+
+    int main(void) {
+
+        
+        char op;
+        
+        printf("연산자를 선택하세요(+|-|*|/)");
+        scanf_s(" %c", &op, sizeof(op));
+
+        int (*fp) (int, int);
+        switch (op) {
+        
+        case '+':
+            fp = sum;
+            func(fp);
+            break;
+        case '-':
+            fp = minus;
+            func(fp);
+            break;
+        case '*':
+            fp = mul;
+            func(fp);
+            break;
+        case '/':
+            fp = div;
+            func(fp);
+            break;
+        default :
+            printf("연산기호가 잘못 입력되었습니다.");
+        }
+        return 0;
+    }
+
+
+    int sum(int a, int b) {
+        return  a + b;
+    }
+    int minus(int a, int b) {
+        return a - b;
+    }
+    int mul(int a, int b) {
+        return a * b;
+    }
+    int div(int a, int b) {
+        if (b != 0) {
+            return a / b;
+        }
+        else {
+            printf("0으로 나눌 수 없습니다.\n");
+            return 0;  // 0으로 나누지 않도록 처리
+        }
+    }
+
+    void func(int (*fp)(int, int)) {
+        int a, b;
+        
+        printf("두수를 입력하세요>");
+        scanf_s("%d%d", &a, &b);
+
+        int res = fp(a, b);  // 함수 포인터를 통해 연산 수행
+        if (fp == sum) {
+            printf("두수의 합: %d\n", res);
+        }
+        else if (fp == minus) {
+            printf("두수의 차: %d\n", res);
+        }
+        else if (fp == mul) {
+            printf("두수의 곱: %d\n", res);
+        }
+        else if (fp == div) {
+            printf("두수의 나눔: %d\n", res);
+        }
+    }
+    ```
+    - void 포인터 [C](./day05/voidpointer2.c)
+        - 불완전형식은 허용되지 않기에 명시적으로 형변환해줘야함
+       
+        ```C
+        int n = 10;
+
+        void* p;
+        p = &n;
+
+        //printf("*p=%d\n", *p);   //불완전형식 void는 허용되지 않음
+        printf("*p=%d\n", *(int *)p);   
+        ```
+- 16 메모리 동적할당  
+    - malloc, free함수 [C](./day05/malloc.c)
+        - 동적할당한 공간은 변수와 달리 이름이 없으므로 포인터에 주소를 대입하여 사용한다.
+        - 동적할당을 요청한 후에는 제대로 할당되었는지 반환값을 확인해야 한다.
+        - 사용이 끝난 동적할당공간은 재활용을 위해 반환한다.
+        ```c
+        #include <stdio.h>
+
+        int main() {
+
+            int* pi = (int*)malloc(sizeof(int));	//힙영역에 입력크기만큼 메모리 공간을 할당받아서 시작주소를 리턴함
+            if (pi == NULL) {
+                printf("메모리 할당 실패");
+                exit(1);
+            }
+            printf("메모리 할당 성공");
+            free(pi);
+
+            return 0;
+        }
+        ```
+
+        - 동적 할당한 저장공간은 배열처럼 쓸 때는 포인터가 배열명의 역할을 한다. [C](./day05/malloc3.c)
+
+        ```C
+        /*동적할당을 사용한 문자열 처리*/
+        #define _CRT_SECURE_NO_WARNINGS
+        #include <stdio.h>
+        #include <stdlib.h>
+
+        int main(void) {
+
+            char str[100];
+            char* ps[5];
+            for (int i = 0; i < 5; i++) {
+                printf("문자열을 입력하세요");
+                scanf("%s", str);
+                
+                ps[i] = (char*)malloc(strlen(str) + 1);   //동적할당
+                strcpy(ps[i], str);
+                
+            }
+        
+        for (int i = 0; i < 5; i++) {
+            printf("%s\n", ps[i]);
+            free(ps[i]);
+        }
+        
+
+        return 0;
+        }
+        ```
+    - calloc, realloc 함수 [C](./day05/realloc.c)
+    ```C
+    #define _CRT_SECURE_NO_WARNINGS
+    #include <stdio.h>
+    #include <stdlib.h>
+
+    int main(void) {
+
+
+        int* pi;
+        int size = 5;
+        int count = 0;
+        int num;
+        int i;
+
+        pi = (int*)calloc(size, sizeof(int));
+
+        while (1) {
+        
+            printf("양수만 입력하세요>");
+            scanf("%d", &num);
+            if (num <= 0) break;
+
+            if (count == size) {    //기존 동적할당 메모리공간 5개를 초과할 경우,realloc로 동적할당 크기 조절
+                size += 5;
+                pi = (int*)realloc(pi, size * sizeof(int));
+            }
+            pi[count++] = num;
+        }
+
+        for (i = 0; i < count; i++) {
+            printf("%d\n", pi[i]);
+        }
+        free(pi);
+
+        return 0;
+    }
+    ```
+    - 명령형 인수처리 [C](./day05/main.c)
+    <img src='./images/동적할당활용.png'>
+
+- 17 사용자 정의 자료형 
+    - struct 구조체 [C](./day05/struct.c) [C](./day05/struct3.c)  [C](./day05/struct4.c)
+        - 입력,출력을 여러개 보낼 때, 구조체를 사용한다.
+    ```C
+    struct Human {
+
+	char name[100];
+	int age;
+    };
+
+    int main() {
+        struct Human h;
+    /*멤버 접근 연산자*/
+        
+        h.age = 10;
+
+        //h.name = "홍길동"; //h.name은 배열이름,즉 상수이다.  lvalue는 변수여야 함.
+        strcpy(h.name, "홍길동");
+        
+        printf("이름은 %s이고 나이는 %d살입니다.\n", h.name, h.age);
+        
+        return 0;
+    }
+    ```
+    - 구조체 멤버 포인터변수 동적할당 [C](./day05/struct3.c) 
+
+    - 구조체의 멤버로 다른 구조체 사용하기 [C](./day05/struct4.c)
+    ```c
+    #include <stdio.h>
+
+
+    struct profile {
+
+        int age;
+        double height;
+        double weight;
+
+
+    };
+
+    struct student {
+
+        struct profile pf;
+        int id;
+        double grade;
+
+    };
+
+    int main(void) {
+
+        struct student s;
+        s.pf.age = 19;
+        s.pf.height = 199.5;
+        s.pf.weight = 88.5;
+        s.grade = 96.9;
+        s.id = 202510110;
+
+        printf("키:%.1lf\n", s.pf.height);
+        printf("체중:%.1lf\n", s.pf.weight);
+        printf("나이:%d\n", s.pf.age);
+        printf("성적:%.1lf\n", s.grade);
+        printf("학번:%d\n", s.id);
+
+
+
+
+        return 0;
+    }
+    ```
+    - 구조체 변수의 초기화와 대입 연산 [C](./day05/struct5.c)
+    ```c
+        struct Human {
+
+        char name[100];
+        int age;
+
+    };
+
+    int main() {
+
+        struct Human h = { "정시현", 19 };
+        struct Human h1 = { "오봉자", 19 };
+        
+        //struct Human h = { "정시현",34 },
+        //			 h1 = { "오봉자", 34 };     //int a = 10, b=20;와 동일한 변수초기화 형태
+
+        printf("이름:%s, 나이:%d\n", h.name, h.age);
+        printf("이름:%s, 나이:%d\n", h1.name, h1.age);
+
+        return 0;
+    }
+    ```
+    - typedef -자료형 재정의 [C](./day05/struct5.c)
+    ```c
+    typedef struct mystruct {
+        int a;
+        int b;
+
+    }Mystruct;          //새 자료형 이름:Mystruct
+
+    int main() {
+
+	Mystruct m ={10,20};
+
+	return 0;
+    }
+
+    ```
+    ```c
+    typedef int int32mt;  // int 타입을 int32mt라는 이름으로 정의
+    struct Human {
+
+        char name[100];
+        int32mt age;
+
+    };
+    ```
+    - 구조체 변수를 함수의 매개변수에 사용하기 [C](./day05/struct6.c)
+    - 구조체 변수의 크기
+    <img src='./images/패딩바이트.png'>
+
+    - 구조체 포인터 변수 [C](./day05/structpoint.c)
+        - `구조체 포인터 변수도 자료형이 동일해야한다.`
+    ```C
+    typedef struct score {
+
+	int kor;
+	int eng;
+	int mat;
+    }SCORE;
+
+    int main(void) {
+
+        SCORE s = { 100,80,85 };
+        SCORE* ps = &s;
+        printf("국어:%d \n", ps->kor);
+        printf("영어:%d \n", ps ->eng);
+        printf("수학:%d \n", (*ps).mat);
+
+        return 0;
+
+    }
     ```

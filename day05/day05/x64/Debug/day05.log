@@ -1,0 +1,3 @@
+﻿  arraypointer.c
+C:\Source\iot_c_2025\day05\arraypointer.c(18,8): warning C4048: 배열 첨자가 다릅니다. 'int (*)[2][3]'과(와) 'int (*)[3]'
+  day05.vcxproj -> C:\Source\iot_c_2025\day05\x64\Debug\day05.exe

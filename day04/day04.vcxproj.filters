@@ -51,5 +51,8 @@
     <ClCompile Include="func.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="staticv.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
