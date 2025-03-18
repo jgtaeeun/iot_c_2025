@@ -1,8 +1,11 @@
+C:\Source\iot_c_2025\day05\2matrixarr.c;C:\Source\iot_c_2025\day05\day05\x64\Debug\2matrixarr.obj
 C:\Source\iot_c_2025\day05\array2.c;C:\Source\iot_c_2025\day05\day05\x64\Debug\array2.obj
+C:\Source\iot_c_2025\day05\arrayaddress.c;C:\Source\iot_c_2025\day05\day05\x64\Debug\arrayaddress.obj
 C:\Source\iot_c_2025\day05\arraypointer.c;C:\Source\iot_c_2025\day05\day05\x64\Debug\arraypointer.obj
 C:\Source\iot_c_2025\day05\cal.c;C:\Source\iot_c_2025\day05\day05\x64\Debug\cal.obj
 C:\Source\iot_c_2025\day05\cal2.c;C:\Source\iot_c_2025\day05\day05\x64\Debug\cal2.obj
 C:\Source\iot_c_2025\day05\charpointarray.c;C:\Source\iot_c_2025\day05\day05\x64\Debug\charpointarray.obj
+C:\Source\iot_c_2025\day05\doublepointer.c;C:\Source\iot_c_2025\day05\day05\x64\Debug\doublepointer.obj
 C:\Source\iot_c_2025\day05\intpointarray.c;C:\Source\iot_c_2025\day05\day05\x64\Debug\intpointarray.obj
 C:\Source\iot_c_2025\day05\main.c;C:\Source\iot_c_2025\day05\day05\x64\Debug\main.obj
 C:\Source\iot_c_2025\day05\malloc.c;C:\Source\iot_c_2025\day05\day05\x64\Debug\malloc.obj
@@ -17,5 +20,6 @@ C:\Source\iot_c_2025\day05\struct5.c;C:\Source\iot_c_2025\day05\day05\x64\Debug\
 C:\Source\iot_c_2025\day05\struct6.c;C:\Source\iot_c_2025\day05\day05\x64\Debug\struct6.obj
 C:\Source\iot_c_2025\day05\structary.c;C:\Source\iot_c_2025\day05\day05\x64\Debug\structary.obj
 C:\Source\iot_c_2025\day05\structpoint.c;C:\Source\iot_c_2025\day05\day05\x64\Debug\structpoint.obj
+C:\Source\iot_c_2025\day05\test.c;C:\Source\iot_c_2025\day05\day05\x64\Debug\test.obj
 C:\Source\iot_c_2025\day05\voidpointer.c;C:\Source\iot_c_2025\day05\day05\x64\Debug\voidpointer.obj
 C:\Source\iot_c_2025\day05\voidpointer2.c;C:\Source\iot_c_2025\day05\day05\x64\Debug\voidpointer2.obj

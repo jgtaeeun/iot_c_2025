@@ -816,21 +816,87 @@
         ```C
         #include <stdio.h>
 
-        int main() {
-            int arr[3] = {1, 2, 3};  // 배열 선언
-            int (*ptr)[3] = &arr;     // 배열 포인터,  크기가 3인 int 배열을 가리키고 있습니다.
-
-            // ptr을 사용하여 배열 요소에 접근
-            printf("arr[0] = %d\n", (*ptr)[0]);  // 1 출력
-            printf("arr[1] = %d\n", (*ptr)[1]);  // 2 출력
-            printf("arr[2] = %d\n", (*ptr)[2]);  // 3 출력
-
+        int main(void) {
+            int arr[3] = { 1, 2, 3 };
+            int (*ptr)[3] = arr;      //ptr[0] = {1,2,3}
+            printf("%d\n",(*(*ptr+0)+0) );
+            printf("%d\n", ptr[0][1]);
+            printf("%d\n", ptr[0][2]);
             return 0;
         }
         ```
     - 포인터 배열 실습 [C](./day05/intpointarray.c)  [C](./day05/charpointarray.c) 
     - 배열 포인터 실습 [C](./day05/arraypointer.c)
+    
 - 15 응용포인터
+    - 이중 포인터
+        - 포인터도 하나의 변수이므로 그 주소가 있다.
+    ```C
+    #include <stdio.h>
+
+    void print_str(char **pts, int c);
+    int main(void) {
+
+        char* ptr_ary[] = {"eager","tiger","lion","squirrel"};
+        int count;
+        //printf(" sizeof(ptr_ary): %d\n", sizeof(ptr_ary));  //32
+        //printf(" sizeof(ptr_ary[0]): %d\n", sizeof(ptr_ary[0]));  //8 포인터는 64비트 시스템에서 8바이트 크기를 가집니다.
+        count = sizeof(ptr_ary) / sizeof(ptr_ary[0]);
+        print_str(ptr_ary, count);
+        return 0;
+    }
+
+    void print_str(char** pts, int c){
+        int i;
+        for (i = 0; i < c; i++) {
+            printf("%s\n", pts[i]);
+        }
+    }
+    ```
+    - 주소로 쓰이는 배열명과 배열의 주소 비교
+    ```C
+    #include <stdio.h>
+
+    int main(void) {
+        int ary[5];
+        printf("ary:%u\n", ary);       //1068497640
+        printf("&ary:%u\n", &ary);   //1068497640
+        printf("ary+1:%u\n", ary+1);  //1068497644
+        printf("&ary+1:%u\n", &ary+1); //&ary+1:1068497660
+
+        return 0;
+    }
+    ```
+    - 2차원 배열과 배열 포인터
+        - 2차원배열의 배열명은 첫번째 부분배열의 주소가 된다.
+    ```C
+    int ary[3][4] = { {1,2,3,4},{5,6,7,8},{9,10,11,12} };
+    int (*pa)[4]=ary;  //pa[0] = ary[0] , 즉 0행의 열들 {1,2,3,4}
+    ```
+    <img src='./images/2차원배열의요소참조.png'>
+
+    ```C
+    #include <stdio.h>
+
+    int main(void) {
+        int ary[3][4] = { {1,2,3,4},{5,6,7,8},{9,10,11,12} };
+        
+        /*ary는 2D 배열 int ary[3][4]입니다.
+        이 배열은 3개의 행과 4개의 열을 가진 배열입니다.
+        pa는 ary 배열의 각 행을 가리키는 포인터입니다.
+        즉, pa는 int[4] 배열을 가리키는 포인터입니다.
+        (*pa)는 int[4] 타입의 배열을 가리키며, pa[i]는 ary[i]와 동일하게 int[4] 배열을 가리킵니다.
+        따라서 pa[i][j]는 ary[i][j]와 동일하게 2D 배열의 특정 원소에 접근할 수 있습니다.*/
+        int (*pa)[4]=ary;  //pa[0] = ary[0] , 즉 0행의 열들 {1,2,3,4}
+        int i, j;
+        for (i = 0; i < 3; i++) {
+            for (j = 0; j < 4; j++) {
+                printf("%d ", pa[i][j]); // *(*(pa + i) +j ))
+            }
+        }
+        return 0;
+    }
+    ```
 - 16 메모리 동적할당
 - 17 사용자 정의 자료형
 - 18 파일입출력

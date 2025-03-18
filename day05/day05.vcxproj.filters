@@ -78,5 +78,17 @@
     <ClCompile Include="structary.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="doublepointer.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="arrayaddress.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="2matrixarr.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="test.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

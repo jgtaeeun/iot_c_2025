@@ -127,11 +127,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="2matrixarr.c" />
     <ClCompile Include="array2.c" />
+    <ClCompile Include="arrayaddress.c" />
     <ClCompile Include="arraypointer.c" />
     <ClCompile Include="cal.c" />
     <ClCompile Include="cal2.c" />
     <ClCompile Include="charpointarray.c" />
+    <ClCompile Include="doublepointer.c" />
     <ClCompile Include="intpointarray.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="malloc.c" />
@@ -146,6 +149,7 @@
     <ClCompile Include="struct6.c" />
     <ClCompile Include="structary.c" />
     <ClCompile Include="structpoint.c" />
+    <ClCompile Include="test.c" />
     <ClCompile Include="voidpointer.c" />
     <ClCompile Include="voidpointer2.c" />
   </ItemGroup>

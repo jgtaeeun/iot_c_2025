@@ -3,8 +3,20 @@
   "WorkspaceRootPath": "C:\\Source\\iot_c_2025\\day05\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{049AC420-1380-4705-9B0A-5618D916F452}|day05.vcxproj|C:\\Source\\iot_c_2025\\day05\\charpointarray.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{049AC420-1380-4705-9B0A-5618D916F452}|day05.vcxproj|solutionrelative:charpointarray.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{049AC420-1380-4705-9B0A-5618D916F452}|day05.vcxproj|C:\\Source\\iot_c_2025\\day05\\intpointarray.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{049AC420-1380-4705-9B0A-5618D916F452}|day05.vcxproj|solutionrelative:intpointarray.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{049AC420-1380-4705-9B0A-5618D916F452}|day05.vcxproj|C:\\Source\\iot_c_2025\\day05\\arraypointer.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{049AC420-1380-4705-9B0A-5618D916F452}|day05.vcxproj|solutionrelative:arraypointer.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{049AC420-1380-4705-9B0A-5618D916F452}|day05.vcxproj|C:\\Source\\iot_c_2025\\day05\\test.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{049AC420-1380-4705-9B0A-5618D916F452}|day05.vcxproj|solutionrelative:test.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +31,53 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "charpointarray.c",
+              "DocumentMoniker": "C:\\Source\\iot_c_2025\\day05\\charpointarray.c",
+              "RelativeDocumentMoniker": "charpointarray.c",
+              "ToolTip": "C:\\Source\\iot_c_2025\\day05\\charpointarray.c",
+              "RelativeToolTip": "charpointarray.c",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2025-03-18T01:08:12.904Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "intpointarray.c",
+              "DocumentMoniker": "C:\\Source\\iot_c_2025\\day05\\intpointarray.c",
+              "RelativeDocumentMoniker": "intpointarray.c",
+              "ToolTip": "C:\\Source\\iot_c_2025\\day05\\intpointarray.c",
+              "RelativeToolTip": "intpointarray.c",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2025-03-18T01:07:57.624Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "arraypointer.c",
               "DocumentMoniker": "C:\\Source\\iot_c_2025\\day05\\arraypointer.c",
               "RelativeDocumentMoniker": "arraypointer.c",
               "ToolTip": "C:\\Source\\iot_c_2025\\day05\\arraypointer.c",
               "RelativeToolTip": "arraypointer.c",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAuwB0AAAADAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAkAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-03-17T07:21:34.136Z",
+              "WhenOpened": "2025-03-18T01:06:19.511Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "test.c",
+              "DocumentMoniker": "C:\\Source\\iot_c_2025\\day05\\test.c",
+              "RelativeDocumentMoniker": "test.c",
+              "ToolTip": "C:\\Source\\iot_c_2025\\day05\\test.c",
+              "RelativeToolTip": "test.c",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2025-03-18T01:02:52.47Z",
               "EditorCaption": ""
             }
           ]
