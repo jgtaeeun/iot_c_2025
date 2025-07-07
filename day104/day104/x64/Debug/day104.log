@@ -1,0 +1,4 @@
+﻿  type.c
+C:\Source\iot_c_2025\day104\day104\type.c(13,23): warning C4305: '초기화 중': 'int'에서 'unsigned char'(으)로 잘립니다.
+C:\Source\iot_c_2025\day104\day104\type.c(14,13): warning C4305: '초기화 중': 'int'에서 'char'(으)로 잘립니다.
+  day104.vcxproj -> C:\Source\iot_c_2025\day104\x64\Debug\day104.exe
