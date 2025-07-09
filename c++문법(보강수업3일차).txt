@@ -1,0 +1,66 @@
+1)참조자
+함수리턴값에 따른 경우
+
+- 출력이 상수일 경우, const 자료형&변수명 (상수참조자)
+#include <iostream>
+int func(int& arg)
+{
+	arg += 1;
+	return arg;
+}
+int main()
+{
+	int num = 10;
+	const int& result = func(num);
+	std::cout << result << std::endl;
+	return 0;
+}
+
+- 출력이 참조자일 경우 , 자료형&변수명 (참조자) 이지만 보통은 잘 쓰지 않는다.
+#include <iostream>
+
+int& func()
+{
+	int val = 10;
+	return val;
+}
+
+int main()
+{
+	int& res = func();    //참조변수가 리턴하는 val은 func()의 지역변수이므로 func()함수종료 후 메모리상에서 사라진다.
+	std::cout << res << std::endl;
+	return 0;
+
+}
+
+
+2) 함수 템플릿
+//함수오버로딩
+int add (int a, int b)
+{
+	return a + b;
+}
+
+
+double add(	double a,	double b)
+{
+	return a + b;
+}
+//템플릿
+template <typename T>
+T add(T a, T b)
+{
+	return a + b;
+}
+
+3) 클래스
+- 생성자, 소멸자
+- 멤버변수, 매서드
+
+class Myclass {
+private :
+	char name[20];
+public :
+	Myclass(char name[20]) { strcpy(this->name, name); }
+
+}
