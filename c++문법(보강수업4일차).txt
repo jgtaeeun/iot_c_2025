@@ -1,0 +1,62 @@
+정적 다형성- 오버로딩.함수템플릿
+동적 다형성- 오버라이딩. virtual
+
+0. strcpy
+#define _CRT_SECURE_NO_WARNINGS
+
+1. 문자열은 \0 널문자 포함한 크기여야함
+char c[3] = "abc";  // error남
+char c[4] = "abc" ;  
+
+strncpy(this->name, name , strlen(name)+1);
+
+2. 클래스
+- 자동으로 제공 :  디폴트생성자, 디폴트소멸자, 디폴트복사생성자
+
+2-1. 기본생성자
+단, 생성자를 사용자가 명시적으로 만들경우, 기본생성자는 제공되지 않는다.
+
+디폴트 생성자 호출은 괄호 생략해야한다. 이유는 main함수내에서의 함수선언 식과 구분하기 위해서이다
+
+Person p; // 디폴트  기본생성자
+Person p1 = p; //디폴트 복사생성자
+Person p2 (p) ; //디폴트 복사생성자
+
+
+2-2. 복사생성자
+멤버변수는 복사된다. => char 문자열의 경우, 얕은 복사면 위험함. 깊은복사해야함.
+멤버함수는 복사되는 것이 아니라 공유한다. this가 쓰이는 이유다.
+
+Person(const Person& other) {
+	this->age = other.age;
+	strcpy(this->name, other.name);
+	std::cout << "복사생성자호출" << std::endl;
+}
+
+2-3. 변환생성자
+다른 타입의 객체로 변환될 때 자동으로 호출되는 생성자
+입력을 한개만 가지는 생성자와 유사
+
+
+3-1. 얕은복사
+Person(const char* name, int age) {
+	this->age = age;
+	strcpy(this->name, name);
+	std::cout << "생성자호출" << std::endl;
+}
+
+3-2. 깊은복사
+char 문자열의 경우, 얕은 복사면 원래의 것이 소멸되면 복사한 것의 char문자열타입은 쓰레기값을 가지게 됨.
+
+private:
+	char* name;
+	int age;
+public :
+	Person(){}
+	Person(const char* a, int age ) {
+		this->age = age;
+		name = new char[strlen(a) + 1];
+		strncpy(name, a, strlen(a)+1);
+		std::cout << "생성자호출" << std::endl;
+	}
+
