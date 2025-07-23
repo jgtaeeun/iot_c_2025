@@ -1,0 +1,18 @@
+✅ 시퀀스 컨테이너 (Sequence Containers)
+요소들이 순서대로 저장되며, 인덱스를 통해 접근할 수 있는 것이 특징입니다.
+
+컨테이너	설명
+std::vector	동적 배열, 가장 널리 사용됨. 끝에 삽입/삭제가 빠름
+std::array	고정 크기 배열 (C++11부터 도입)
+std::list	이중 연결 리스트 (양방향)
+std::forward_list	단일 연결 리스트 (C++11부터 도입)
+std::deque	양방향 큐 (Double-Ended Queue), 양쪽 끝 삽입/삭제 빠름
+
+✅ 연관 컨테이너 (Associative Containers)
+요소들이 키(key) 기반으로 저장되고 자동 정렬됨 (< 연산자 또는 비교 함수 기준).
+
+컨테이너	설명
+std::set	중복되지 않는 값 저장, 자동 정렬
+std::multiset	중복 허용
+std::map	키-값 쌍 저장, 키는 중복 불가
+std::multimap	키 중복 허용
