@@ -1,0 +1,73 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Source\\iot_c_2025\\codingtest_day120\\Project1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3FB16D1D-D32B-4150-BAC3-3047957EFA73}|Project1\\Project1.vcxproj|C:\\Source\\iot_c_2025\\codingtest_day120\\Project1\\Project1\\exam2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3FB16D1D-D32B-4150-BAC3-3047957EFA73}|Project1\\Project1.vcxproj|solutionrelative:Project1\\exam2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FB16D1D-D32B-4150-BAC3-3047957EFA73}|Project1\\Project1.vcxproj|C:\\Source\\iot_c_2025\\codingtest_day120\\Project1\\Project1\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3FB16D1D-D32B-4150-BAC3-3047957EFA73}|Project1\\Project1.vcxproj|solutionrelative:Project1\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FB16D1D-D32B-4150-BAC3-3047957EFA73}|Project1\\Project1.vcxproj|C:\\Source\\iot_c_2025\\codingtest_day120\\Project1\\Project1\\exam.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3FB16D1D-D32B-4150-BAC3-3047957EFA73}|Project1\\Project1.vcxproj|solutionrelative:Project1\\exam.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "test.cpp",
+              "DocumentMoniker": "C:\\Source\\iot_c_2025\\codingtest_day120\\Project1\\Project1\\test.cpp",
+              "RelativeDocumentMoniker": "Project1\\test.cpp",
+              "ToolTip": "C:\\Source\\iot_c_2025\\codingtest_day120\\Project1\\Project1\\test.cpp",
+              "RelativeToolTip": "Project1\\test.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-07-28T01:29:11.238Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "exam2.cpp",
+              "DocumentMoniker": "C:\\Source\\iot_c_2025\\codingtest_day120\\Project1\\Project1\\exam2.cpp",
+              "RelativeDocumentMoniker": "Project1\\exam2.cpp",
+              "ToolTip": "C:\\Source\\iot_c_2025\\codingtest_day120\\Project1\\Project1\\exam2.cpp",
+              "RelativeToolTip": "Project1\\exam2.cpp",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAACcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-07-28T00:51:23.888Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "exam.cpp",
+              "DocumentMoniker": "C:\\Source\\iot_c_2025\\codingtest_day120\\Project1\\Project1\\exam.cpp",
+              "RelativeDocumentMoniker": "Project1\\exam.cpp",
+              "ToolTip": "C:\\Source\\iot_c_2025\\codingtest_day120\\Project1\\Project1\\exam.cpp",
+              "RelativeToolTip": "Project1\\exam.cpp",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAzwBoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-07-28T00:42:46.037Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
